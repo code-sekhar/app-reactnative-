@@ -10,13 +10,16 @@ import {
   StyleSheet, TouchableOpacity,
   Text,
   View,
+  TextInput,
+  Button,
 } from 'react-native';
 import Home from './pages/Home';
 
 
 function App(): React.JSX.Element {
   const [buttonColor, setButtonColor] = useState('blue'); // প্রাথমিক রঙ
-
+  const [name, setName] = useState('');
+  const [password, setPassword] = useState('');
   const handlePress = () => {
     console.log('click');
     // বোতামের রঙ পরিবর্তন
@@ -24,7 +27,7 @@ function App(): React.JSX.Element {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, styles.boxCard]}>
       <Text style={styles.text}>Click the Button</Text>
       <TouchableOpacity
         style={[styles.button, { backgroundColor: buttonColor }]}
@@ -33,6 +36,23 @@ function App(): React.JSX.Element {
         <Text style={styles.buttonText}>Click Me</Text>
       </TouchableOpacity>
       <Home name="Sekhar" age="28" address="Kolkata , West Bengal, 713166" />
+      <TextInput
+      style={styles.textInput}
+      placeholder="Enter your name"
+      value={name}
+      onChangeText={(text) => setName(text)}
+      />
+      <TextInput
+      style={styles.textInput}
+      placeholder="Enter your Password"
+      value={password}
+      onChangeText={(text) => setPassword(text)}
+      />
+      <Text style={styles.text}>Your Name : {name} </Text>
+      <Text style={styles.text}>Your Password : {password} </Text>
+      <Button
+        title="Clear Me"
+        onPress={() => {setName(''); setPassword('');}} />
     </View>
   );
 }
@@ -57,6 +77,20 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 18,
     fontWeight: 'bold',
+  },
+  textInput:{
+    borderColor: 'green',
+    borderWidth: 2,
+    margin: 10,
+    width: '100%',
+    fontSize: 20,
+    borderRadius: 15,
+  },
+  boxCard:{
+    padding: 20,
+    margin: 20,
+    boxShadow: '1px 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+    borderRadius: 15,
   },
 });
 
