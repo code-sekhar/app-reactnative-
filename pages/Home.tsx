@@ -1,11 +1,15 @@
-import React from 'react';
+import React  from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-function Home(props: { name: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | null | undefined; }) {
+function Home(props: {
+    address: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | null ; age: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | null | undefined; children?: React.ReactNode; name: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | null | undefined; 
+}) {
     return (
         <View>
             <Text style={styles.text}>Home button</Text>
             <Text style={styles.text}>Welcome {props.name} off Our Website</Text>
+            <Text style={styles.text}>Age : {props.age}</Text>
+            <Text style={styles.text}>Address :{props.address}</Text>
         </View>
     );
 }

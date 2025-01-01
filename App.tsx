@@ -32,7 +32,7 @@ function App(): React.JSX.Element {
       >
         <Text style={styles.buttonText}>Click Me</Text>
       </TouchableOpacity>
-      <Home name= "Sekhar"/>
+      <Home name="Sekhar" age="28" address="Kolkata , West Bengal, 713166" />
     </View>
   );
 }
