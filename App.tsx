@@ -14,6 +14,11 @@ import {
   Button,
 } from 'react-native';
 import Home from './pages/Home';
+import List from './pages/List';
+
+
+
+
 
 
 function App(): React.JSX.Element {
@@ -47,12 +52,16 @@ function App(): React.JSX.Element {
       placeholder="Enter your Password"
       value={password}
       onChangeText={(text) => setPassword(text)}
+      secureTextEntry={true}
       />
       <Text style={styles.text}>Your Name : {name} </Text>
       <Text style={styles.text}>Your Password : {password} </Text>
+      <Text style={styles.text}>Test </Text>
+      <Text>Hello</Text>
       <Button
         title="Clear Me"
         onPress={() => {setName(''); setPassword('');}} />
+        <List />
     </View>
   );
 }
